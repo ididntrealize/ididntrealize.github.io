@@ -1,0 +1,433 @@
+
+/* wp helper styles
+p, span, a{
+		font-family:verdana;
+	}
+*/	
+	{}
+	
+	/* the following styles were made by Corey Boiko for requested formatting of home page blurbs */
+	
+	
+/*WP fixer styles */
+	#page .main-appealing-section-container h1{
+		
+		font-family:initial;
+		font-size: 3.4rem;
+		text-shadow: -2px 1px #000000;
+		margin-top: 65px;
+		margin-bottom: 55px;
+		text-align: center;
+		
+	}
+	#page .appealing-section div.text-side h3,
+	#page .appealing-section div.text-side a.cta.learn-more-link,
+	#page .appealing-section div.text-side a.cta.learn-more-link:visited{
+	
+		color:white;
+	}
+	#page .appealing-section div.text-side a.learn-more-link:hover,
+	#page .appealing-section div.text-side a.cta.learn-more-link:hover{
+		color:#efefef;
+	}
+	
+	
+	body{
+		background:white;
+			
+	}
+	
+
+/*BOOK NOW MENU BAR STYLES */
+	
+	.book-now-menu-bar{
+		background:#703915;
+		padding:7px;
+		
+	}
+	.book-now-menu-bar form{
+		display:inline-block;
+		margin-bottom:0px;
+		font-size:1rem;
+	}
+	.book-now-menu-bar .menu-container{
+		margin:0 auto;
+		max-width:940px;
+		color:white;
+		text-align:center;
+	}
+	.book-now-menu-bar .menu-container input[type=number]{
+		width:40px;
+		-moz-appearance:textfield;
+	}
+	.book-now-menu-bar input::-webkit-outer-spin-button,
+	.book-now-menu-bar input::-webkit-inner-spin-button {
+		/* display: none; <- Crashes Chrome on hover */
+		-webkit-appearance: none;
+		margin: 0; /* <-- Apparently some margin are still there even though it's hidden */
+	}
+	.book-now-menu-bar .menu-container button,
+	#footer-book-button-container button{
+		background:#ffad2c;
+		color: #703915;
+	    height: 2.1rem;
+		margin-left: 10px;
+		border:0;
+		font-size: 1.2rem;
+		font-weight: bold;
+		padding:5px;
+		border-radius: 3px;
+		
+	}
+	.book-now-menu-bar .menu-container button:hover,
+	.book-now-menu-bar .menu-container button:focus,
+	#footer-book-button-container button:hover,
+	#footer-book-button-container button:focus{
+		color: #ffffff;
+	 
+	}
+	
+	#footer-book-button-container{
+		padding-top:20px;
+	}
+	
+	.book-now-menu-bar .menu-container .additional-contact{
+		display: inline-block;
+		font-size: .8rem;
+		text-align: left;
+		position: relative;
+		line-height: 1;
+		top: 5px;
+	}
+	
+	/*
+		current color pallete:
+			.appealing-section:nth-of-type(1)
+				CTA - Darkest brown: #bc9c81
+				main content - Medium brown: #ebd7c3 => (even lighter) #f9f4ef
+				quote - light brown: #d8b088  => (lighter) #efe6dc
+			
+			.appealing-section:nth-of-type(2)
+				main content -darkest orange: #e99a59 => (lighter) #f2ad74
+				CTA - mid orange: #fd9540
+				quote - light orange: #f3c7a3
+				
+			.appealing-section:nth-of-type(3)
+				CTA - darkest blue: CTA - darkest blue: #415a6d
+				main content - medium blue: #85b4df
+				quote - light blue: #bfd8ef
+				
+			.appealing-section:nth-of-type(4)
+				CTA - darkest green: #6a8c5b
+				main content - medium green: #97c777
+				quote - light green: #bddca8
+			
+	*/
+				/* FIRST appealing-section colors */	
+						.first.appealing-section div.text-side {
+								background:#ebd7c3;
+							}
+						.first.appealing-section .quote-cta-container div.quote-side{
+								background: #efe6dc;
+							
+							}
+						.first.appealing-section .quote-cta-container button.cta-button{
+								background:#bc9c81;
+							}
+							
+							
+				/* SECOND appealing-section colors */	
+						.second.appealing-section div.text-side {
+								background:#f2ad74;
+							}
+						.second.appealing-section .quote-cta-container div.quote-side{
+								background: #f3c7a3;
+							
+							}
+						.second.appealing-section .quote-cta-container button.cta-button{
+								background:#fd9540;
+							}
+							
+							
+				/* THIRD appealing-section colors */	
+						.third.appealing-section div.text-side {
+								background:#85b4df;
+							}
+						.third.appealing-section .quote-cta-container div.quote-side{
+								background: #bfd8ef;
+							
+							}
+						.third.appealing-section .quote-cta-container button.cta-button{
+								background:#415a6d;
+							}	
+				/* FOURTH appealing-section colors */	
+						.fourth.appealing-section div.text-side {
+								background:#97c777;
+							}
+						.fourth.appealing-section .quote-cta-container div.quote-side{
+								background: #bddca8;
+							
+							}
+						.fourth.appealing-section .quote-cta-container button.cta-button{
+								background:#6a8c5b;
+							}	
+				
+				
+	
+/* MOBILE STYLES */
+	.appealing-section{
+		width:100%;
+		max-width:500px;
+		margin:0px auto;
+		margin-bottom:60px;
+	}
+	
+		/*TOP SECTION*/
+		.appealing-section div.text-side {
+			padding:20px;
+			letter-spacing: 1.1px;
+		}
+		
+			.appealing-section div.text-side h3{
+				text-transform: uppercase;
+				letter-spacing: -1px;
+				margin-top: 10px;
+				font-size: 2.2rem;
+				color: #532629;
+			}
+			
+			
+			.appealing-section div.text-side{
+				font-size: 1.2rem;
+			}
+			.appealing-section div.text-side a.learn-more-link{
+				text-decoration:none;
+				border:none;
+				outline:none;
+				
+			}
+			
+			.appealing-section div.text-side a.cta.learn-more-link,
+			.appealing-section div.text-side a.cta.learn-more-link:visited{
+				color:white;
+				font-size: 1.4rem;
+				display: block;
+				margin-top:20px;
+				margin-right: 20px;
+			}
+			
+			
+			
+		.appealing-section div.image-side{
+			width:100%;
+			max-width:100%;
+		
+		}
+			.appealing-section img.side-image{
+				width:100%;
+				max-width:500px;
+			
+			}
+			
+			
+			
+		/*QUOTE SECTION*/	
+		.appealing-section .quote-cta-container div.quote-side{
+			padding: 15px 20px;
+		
+		}
+			
+			.appealing-section .quote-cta-container div.quote-side{
+				font-size:1.1rem;
+				font-family:serif;
+				font-style: italic;
+				letter-spacing: 1.1px;
+			}
+			.appealing-section .quote-cta-container div.quote-side span{
+				font-family:verdana;
+				display:inline-block;
+			
+			}
+		
+		
+		.appealing-section .quote-cta-container .cta-side{
+			text-align:center;
+		}
+			.appealing-section .quote-cta-container button.cta-button{
+				color:white;
+				border: solid 5px white;
+				font-size: 2rem;
+				cursor: pointer;
+				
+				width:150px;
+				height:150px;
+				border-radius:75px;
+				-webkit-border-radius: 75px; 
+				-moz-border-radius: 75px; 
+				
+			
+			}
+			.appealing-section .quote-cta-container button.cta-button:focus {
+				outline:0;
+			}			
+			
+
+
+			.appealing-section .quote-cta-container .right.cta-side button.cta-button{
+				
+				box-shadow: 3px 5px black;
+			}
+			.appealing-section .quote-cta-container .left.cta-side button.cta-button{
+				
+				box-shadow: -3px 5px black;
+			}
+			
+			.appealing-section .quote-cta-container .cta-side .phone-number-display{
+				position:absolute;
+				padding:17px;
+				background:white;
+				z-index:99999;
+				border: 1px solid black;
+			}
+			.appealing-section .quote-cta-container .cta-side .phone-number-display a{
+				text-decoration:none;
+			}
+			
+/* LARGER THAN MOBILE STYLES */
+	@media(min-width:768px){
+		
+		.main-appealing-section-container{
+			max-width: 940px;
+			margin: 0 auto;
+			
+		}
+		
+		.appealing-section {
+			max-width:100%;
+			display:inline-block;
+			
+		}
+			/*TOP SECTION*/
+			.appealing-section div.image-text-container{
+				
+				display: -webkit-box;      /* OLD - iOS 6-, Safari 3.1-6 */
+				display: -moz-box;         /* OLD - Firefox 19- (buggy but mostly works) */
+				display: -ms-flexbox;      /* TWEENER - IE 10 */
+				display: -webkit-flex;     /* NEW - Chrome */
+				display: flex;             /* NEW, Spec - Opera 12.1, Firefox 20+ */
+ 
+				max-width: 800px;
+				margin: 0 auto;
+				overflow: hidden;
+				border-radius: 10px;
+			
+			}
+			
+				.appealing-section div.text-side {
+					padding:30px;
+					line-height:1.4;
+					letter-spacing: 1.2px;
+					
+				}
+				.appealing-section div.text-side h3 {
+					font-family: sans-serif;
+					font-size:2.5rem;
+					font-weight: 800;
+				    margin-top: 0px;
+					margin-bottom: 30px;
+					color:white;
+					line-height: .8;
+				}
+				
+				
+				
+				.appealing-section div.text-side.left {
+					width: calc(59.9% - 20px);
+					 
+					 -webkit-box-ordinal-group: 1;  
+					  -moz-box-ordinal-group: 1;    
+					  -ms-flex-order: 1;     
+					  -webkit-order: 1;  
+					  order: 1;
+					
+				}
+				.appealing-section div.text-side.right {
+					width: calc(59.9% - 20px);
+					
+					  -webkit-box-ordinal-group: 2;  
+					  -moz-box-ordinal-group: 2;    
+					  -ms-flex-order: 2;     
+					  -webkit-order: 2;  
+					  order: 2;
+					
+				}
+				
+				.appealing-section div.image-side.left {
+					width: calc(40% - 20px);
+					
+					  -webkit-box-ordinal-group: 1;  
+					  -moz-box-ordinal-group: 1;     
+					  -ms-flex-order: 1;     
+					  -webkit-order: 1;  
+					  order: 1;
+					
+					
+				}
+				.appealing-section div.image-side.right {
+					width: calc(40% - 20px);
+					
+					  -webkit-box-ordinal-group: 2;  
+					  -moz-box-ordinal-group: 2;     
+					  -ms-flex-order: 2;     
+					  -webkit-order: 2;  
+					  order: 2;
+					
+					
+				}
+				
+				.appealing-section div.text-side.left a.cta.learn-more-link{
+					text-align:right;
+					
+				}
+				
+		
+		
+			/*QUOTE SECTION*/
+			.appealing-section div.quote-cta-container{
+				max-width: 1101px;
+				margin: 0 auto;
+				
+				margin-bottom:-20px;
+				position: relative;
+				bottom: 20px;
+			
+			}
+			
+				.appealing-section .quote-cta-container div.quote-side {
+					display: inline-block;
+					max-width: calc(75% - 20px);
+					transform: rotate(2deg);
+					border: 3px dotted white;
+				}
+				.appealing-section .quote-cta-container div.quote-side.right {
+					float:right;
+					transform: rotate(-2deg);
+				}
+				
+				.appealing-section .quote-cta-container .cta-side {
+					text-align: center;
+					display: inline-block;
+					float: right;
+					
+				}
+				
+				.appealing-section .quote-cta-container .cta-side.left {
+					float: inherit;
+				}
+				
+					.appealing-section .quote-cta-container .cta-side{	
+						position: relative;
+						bottom: 60px;
+						margin-bottom:-60px;
+					}
+	}

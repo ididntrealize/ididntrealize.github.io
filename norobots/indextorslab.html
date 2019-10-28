@@ -1,0 +1,826 @@
+ <!DOCTYPE html>
+<html lang="en">
+  <head>
+   <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="author" content="Scrooge the Grouch">
+    <meta name="description" content="A collection of surrealistic poetry, prose, and art done by you know who. Or do you? Who M I, Anyways?">
+	<link rel="icon" href="http://didntrealize.com/images/logoIcon.png">
+
+   <title title="">I Didn't Realize</title>
+	
+	
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	
+	
+	<style style="" type="text/css">
+
+		/* mobile meh - custom responsiveness styles */
+			/* column display */
+				.container{
+					max-width: 768px;
+					width:100%;
+					margin: 0px auto;
+					padding: 0px 10px;
+				}
+				
+				.row{
+					margin: 0px 7px;
+					display: block;
+				}
+				
+				.col-sm-4{
+					float: left !important;
+					width: 33.3%;
+					max-width: 160px;
+					
+				}
+
+				.col-sm-8{
+					float: left !important;
+					width: 66.6%;
+				}
+				
+	
+
+
+			/* content organization */
+				.img-responsive{
+					max-width:calc( 100% - 20px);
+					width:calc( 100% - 20px);
+				}
+				
+				.text-center{
+					text-align:center;
+				}
+				.pull-left{
+					display:inline-block;
+					float:left;
+					
+				}
+
+				.pull-right{
+					display:inline-block;
+					float:right;
+					
+				}
+
+
+
+	/* IDR styles */
+	
+		body, html { margin:0;}
+		
+		p, span, h1, h2, h5{
+			font-family: sans-serif;
+		
+		}
+		h1{
+			font-size:60px;
+			color:white;
+			margin-top:62px;
+			margin-bottom:23px;
+			text-shadow:
+				-2px -2px 0px #000000, 
+				2px -2px 0px #000000, 
+				-2px 2px 0px #000000, 
+				2px 2px 0px #000000;
+				
+			
+		}
+		h2{
+			display:none;
+			text-align:center;
+			font-size:64px;
+
+		}
+
+		h5{
+			text-align:right;
+		}
+		
+		.header-area{
+			position:absolute;
+			height:155px;
+			background: url('http://ididntrealize.com/norobots/psychologic.jpg');
+			background-position: center -680px;
+			width: calc( 100% - 20px);
+			z-index: -9999999;
+		}
+		
+		#contentDiv{
+			padding-top:25px;
+		}
+		
+		#sidebar{
+			padding-right:7px;
+		}
+		#sidebar ul{
+			display:inline-block;
+		    list-style-type: none;
+			padding-left: 7px;
+		}
+		
+		#sidebar-list a{
+			text-align:right;
+			text-decoration:none;
+			line-height:1.5;
+			font-size: 14px;
+			color: #9D7Aaa;
+			
+
+		}
+		
+		#IQuestion{
+			max-width:100px;
+			position: relative;
+			left: 30px;
+			
+		}
+		.sideImage{
+			border-radius:15px;
+			margin-right:12px;
+		}
+
+		.short-story {
+			max-width:420px;
+		}
+		.poem, .short-story{
+			display: table;
+			max-width:520px;
+			
+			width: calc( 100% - 20px);
+			
+		}
+		
+		.poem{
+			min-width: 346px;
+		}
+		.poetryParagraph{
+			text-align:left;
+		}
+		.poetryParagraph.centered{
+			text-align: center;
+		}
+		
+		.short-story p{
+				text-align: justify;
+			}
+
+		
+/* mobile last - yall folk wont pay enough e-ttention on ur phone anyways */
+		@media(max-width:520px){
+		
+			h1{font-size:42px;margin-top:0px;text-align:center;}
+		
+			.col-sm-4, .col-sm-8{
+				width: 100%;
+				float: none;
+				max-width:621px;
+			}
+			.header-area{
+				height:155px;
+			}
+			
+			#sidebar{
+				max-width:420px;
+				margin:0 auto;
+				float:left;
+			}
+			#IQuestion {
+				max-width: 120px;
+				float:left;
+				left: 0px;
+			}
+			
+			#contentDiv {
+				padding-top: 0px;
+				margin-top: -45px;
+			}
+			
+			#daytaDiv{
+				text-align:center;
+			
+			}
+			.poetryParagraph {
+				background: white;
+			}
+			
+			
+	/* nav */
+			
+			#sidebar ul {
+				height: 0px;
+				overflow: hidden;
+
+			}
+
+			#sidebar {
+				max-width: 100px;
+				float: none;
+			}
+
+			
+		}
+		
+
+	</style>
+  </head>
+
+	
+
+	<body class="">
+		<div class="header-area">
+			
+		</div>
+  		<div class="container">
+			<div id="sidebar" class=" col-sm-4 pull-left">
+				<div style="">
+					<a href="#" onClick="window.location = 'http://didntrealize.com'">
+						<img id="IQuestion" title="Y Question" alt="I Question logo" class="img-responsive pull-right" src="http://didntrealize.com/images/logo-sm.png" style=""/>
+					</a>
+				</div>
+
+				<ul id="sidebar-list">
+				
+				<h5>Rain</h5>
+				
+				<a class="internal-link slide-to-content" href="#selfByTrialDiv" onclick="showSelfByTrial();"><li >Self By Trial</li></a>
+				
+				<a class="internal-link slide-to-content" href="#conditionalFriendlinessDiv"><li >Obscured</li></a>
+				<a class="internal-link slide-to-content" href="#beenRainingDiv"><li>Been Raining</li></a>
+
+				
+				<h5>Smoke</h5>
+				
+				<a class="internal-link slide-to-content" href="#playItselfOutDiv"><li >Play itself out</li></a>
+				<a class="internal-link slide-to-content" href="#" onclick="window.location = 'http://ididntrealize.com/norobots/allowed.html'"><li >Hay Stack</li></a>
+				<!--a href="#neverNotDiv"><li >Never Not</li></a-->
+
+				<!--
+				<h5>Love</h5>
+				
+				<a class="internal-link slide-to-content" href="#brainsWaveDiv"><li >Brains Wave</li></a>
+				<a class="internal-link slide-to-content" href="#springBeginningDiv"><li >Spring Beginning</li></a>
+				
+				<a class="internal-link slide-to-content" href="#wasntItDiv"><li >Wasn't It</li></a>
+				-->
+				
+				<h5>Madness</h5>
+				<!--
+				<a class="internal-link slide-to-content" href="#fosterSoulsDiv"><li >Foster Souls</li></a>
+				<a class="internal-link slide-to-content" href="#aCrossWalkDiv"><li >A Cross Walk</li></a>
+				<a class="internal-link slide-to-content" href="#corrosivelyImaginingDiv"><li>Corrosively Imagining</li></a>
+
+				-->
+				<a class="internal-link slide-to-content" href="#neverNaughtDiv"><li>Nevernaut</li></a>
+
+			</ul>
+		</div>
+
+		<div id="contentDiv" class="col-sm-8 col-xs-12 pull-left" style="">
+
+
+		<h1>Didnt Realize</h1>
+
+
+		<div class="coreyPoems">
+
+
+
+			
+
+			
+				<div class="poem" id="AcornRisingDiv" style="">
+						<h3 style="text-align:center;">Acorn Rising</h3>
+
+						<p class="poetryParagraph centered">
+
+						I've been wondering<br/>
+						How to say what I mean,<br/>
+						Pondering how to <br/>
+						Want what I need.<br/>
+						<br/>
+						How to plan trees,<br/>
+						By planting seeds. <br/>
+						<br/>
+						How we could listen<br/>
+						Instead of talk.<br/>
+						<br/>
+						How could I show<br/>
+						A bean, a beanstock?<br/>
+						<br/>
+						How we might one day grow<br/>
+						From raindrops to mighty oaks..<br/>
+						<br/><br/>
+						So why is it<br/>
+						That I've taken us here?<br/>
+						<br/>
+						And how is it <br/>
+						That "us" has little to do <br/>
+						With you and me,<br/>
+						Says an acorn<br/>
+						To her tree.<br/>
+						<br/>
+						Tell me why is it<br/>
+						That I've taken us here?<br/>
+						<br/>
+						And how is it <br/>
+						That "where I've taken us"<br/>
+						Has little to do with <br/>
+						You and I<br/>
+						Going somewhere,<br/>
+						Side by side?<br/>
+						<br/>
+						Rise.<br/>
+						<br/>
+						No strings attach <br/>
+						My moon to your tide,<br/>
+						<br/>
+						And the ground is softer<br/>
+						On the other side,<br/>
+						<br/>
+						So let the wind, <br/>
+						A breath, a sigh<br/>
+						Sweep you up. <br/>
+						<br/><br/>
+						The world is much brighter<br/>
+						If you fall far from my side.<br/>
+						<br/>
+						That's why.
+						<br/><br/>	<br/><br/>
+
+						</p>
+					</div>
+
+
+
+
+					<div id="rain" style="">
+
+							<h2>Rain</h2>
+							<div class="poem" id="selfByTrialDiv">
+		
+						
+									<img class="sideImage" align="left" src="http://didntrealize.com/images/writingThumbSelfByTrial.jpg"/>
+									
+									<h3 class="">Self By Trial</h3>
+					
+					
+									<p style="text-align:left;" class="poetryParagraph">
+					
+										Since I didn&#39;t have<br/>
+										The resolve to follow through<br/>
+										With who I&#39;d love to be<br/>
+										or what I&#39;d love to do,<br/>
+										I jumped at the chance to<br/>
+										Stumble Clumsily into you. <br/>
+										But I was committed to nothing,<br/>
+										Nothing but commitment itself.<br/>
+										I was a love contradiction,<br/>
+										And you were not.<br/>
+										<br/>
+										So we were,<br/>
+										And so, we were not.
+					
+					
+										<br/><br/>	<br/><br/>
+					
+					
+					
+									</p>
+								</div>
+		
+							<img class="center-block img-responsive" title="rain as a collage" alt="rain as a collage" src="http://didntrealize.com/images/banner-collage-rain.jpg"/>
+								<div  class="short-story" id="beenRainingDiv" style="text-align:left;">
+									<h3>And Then It Had Been Raining</h3>
+										<p>
+											We arrived at my uncle&#39;s pillar porch as we got out of the cramped car which had too much stuff in one side of the backseat. Her friend drove a 1980 something Honda Accord. We all got out. They followed me as I approached the door and it opened. Like bees in a hive we knew what we had to do and time sped up. It was all subconsciously taken care of. We knew our tasks, which were separate but for a greater goal, and we went off individually to take care of them. I congregated with my uncle and I figured out that he was taking his own car to our ultimate destination.
+										</p>
+										<p>
+											My path once more crossed with her, and she had all her shopping bags this time. I stopped by my uncle&#39;s car briefly as they rushed to their Honda. We reached an understanding and I turned to walk, quickly, to her friend&#39;s car. She took my front seat... My uncle slowly started to put-put around the other side of our roundabout as I shoved myself into the same seat as her, because the back was now completely obstructed by her shopping bags. I was angry, but I suppressed the need to lash out easily, as we took off skidding around our side of the roundabout driveway. My uncle passed us going the other way and we watched as a cop flashed his siren and pulled him over. I felt relief that we hadn&#39;t been targeted by this cop in our beat up cramped sedan.
+										</p>
+										<p>
+											I advised her friend to slow down, but too late. We hit a curb in front of us and dipped into a meadow like decline to incline that ended with a 3 foot fence and the continuation of our road. Her friend reminded me of his driving prowess and the nature of his off-road experience. We had all seen the road on the other side, so why not have some fun, he lamented. We sped up into the incline and jumped right over the fence on the other side. She needed to make it to her new boyfriend&#39;s house tonight, speed up. And then it had been raining. Careful, I mentioned, you won&#39;t make this turn at the speed you&#39;re going on this slippery street. I was increasingly worried but I hid my feelings to not spark up anyone else&#39;s. It&#39;s okay, as we flew over the side of the road once more into a recognizable grove. He hadn&#39;t been lying about his driving skill, we jumped from one side of a shallow dirt valley to the other, and back, and forth, and back. Our pendulum like motion was devilish at most and her friend smiled at me. The faster we got and further from the road we got, the more I started to fear our ultimate goal.
+										</p>
+										<p>
+											Dread crept up on me and paralyzed me as the prairie&#39;s horizon line cut off and an enormous cliff across the way became increasingly visible, the road adjacent to the base of the cliff, and then finally the lake that separated us from it. I wasn&#39;t going to die, I reassured myself. And then we had launched into empty space. My heart pounded. The seatbelt that I shared with her held true on impact with the water, which wasn&#39;t as jarring as I had expected. We kept our inertia much better than the other car that was also slowly sinking near us. And then my cousin was cramped into the same front seat as her and I. We were going to make it across the lake above water to the road. Her friend removed his seatbelt and made it out his door. Water started rushing in, and those few clumsy moment cost my cousin&#39;s life. I fumbled with my own seatbelt, and was on my way out, but she pushed me back. The water level exceed my capacity to receive oxygen, but I hardly noticed, I wouldn&#39;t get out. Nothingness flashed the briefest fraction of a second.
+										</p>
+										<p>
+											This record of my life skipped a beat, or intervention from above returned me to life, but I believe it was an alternate reality that my spirit escaped into. I was out of the car and onto the road before her. She was struggling and I helped her up the steep yet short ascent onto the solid ground. We were panting from exertion, pumped up from adrenaline. Her friend was nowhere to be seen, and neither was my cousin. I felt disgusted with her. I bit her nose to chin hard enough to let her know I was pissed. I got up to walk away and stepped on her face as I did. Was this real? I felt like I had gone down in the car. I couldn&#39;t have really gotten out. Did I drown under the sea? Was that the reality of the dream that gave me an alternate dream ending? Will anybody ever remember this?
+										</p>
+								</div>
+		
+		
+						</div>
+
+			
+			<div class="poem" id="conditionalFriendlinessDiv" style="">
+
+
+						<img align="left" class="sideImage" src="http://didntrealize.com/images/writingThumbConditionalFriendliness.jpg"/>
+
+					<div class="sideText">
+
+						<h3>Obscured</h3>
+						<em><p class="poetryParagraph">
+
+							I finally found a way<br/>
+							To tear my gaze away.<br/>
+							I read all day <br/>
+							In preparation.<br/>
+							<br/>
+							My eyes blurred	all kinds,<br/>
+							I was so used to type.<br/>
+							<br/>
+							I smiled, <br/>
+							Without regard to if<br/>
+							It was returned.<br/>
+							<br/>
+							I saw my<br/>
+							Conditional<br/>
+							Friendliness<br/>
+<a id="obscured" href="#" style="text-decoration:none;" onclick="
+		document.getElementById('rain').style.display = 'none';
+		document.getElementById('smoke').style.display = 'none';
+		document.getElementById('selfByTrialDiv').style.display = 'none';
+		document.getElementById('hideAndSeekDiv').style.display = 'none';
+		document.getElementById('conditionalFriendlinessDiv').style.display = 'none'; 
+		document.getElementById('AcornRisingDiv').innerHTML = '<h3 style=\'opacity:.1;\'>I love you.</h3>' + '<p>That\'s why.<br/><br/></p>';
+		document.getElementById('theNeedleDiv').style.display = 'block';
+		
+		">
+		Obscured
+	</a>.
+
+
+						</p></em>
+					</div>
+			</div>
+
+			
+			
+
+				<!--div id="daytaDiv">
+
+					<h3 >Call My own</h3>
+
+
+					<p class="poetryParagraph">
+
+							I wanted a day<br/>
+							To call my own.<br/>
+							The sun in my face,<br/>
+							I shunned my phone<br/>
+							<br/>
+							I saw a book,<br/>
+							and I read it slow.<br/>
+							Good thing we do,<br/>
+							and do not know.<br/>
+							<br/>
+							<iframe width="100%" height="250" scrolling="no" frameborder="no" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/192401038&amp;color=ff5500&amp;auto_play=false&amp;hide_related=false&amp;show_comments=true&amp;show_user=true&amp;show_reposts=false&amp;visual=true"></iframe>
+							<br/>
+
+							Just be Subtle, <br/>
+							or you won't catch my drift.<br/>
+							I'm just a fisher catching fish,<br/>
+							While I'm in the net.<br/>
+							<br/>
+
+
+						</p>
+
+				</div -->
+
+			
+				<div id="smoke">
+					<h2>Smoke</h2>
+
+					<img class="center-block img-responsive" title="smoke as a collage" alt="Smoke as a collage" src="http://didntrealize.com/images/banner-collage-smoke.jpg"/>
+
+					<div class="short-story" id="playItselfOutDiv">
+							<h3>Let This One Play Itself Out</h3>
+
+
+								<p>
+								Are you okay, he asks.
+								His disbelieving stare reveals how tense he is.
+								What&#39;s wrong with you?
+								I say, pick up some girls on the bus.
+								Except he can&#39;t see their faces, so he won't.
+								I get their attention.
+								Hey yo girls!
+								The back of your head is ridiculous!
+								I get their affection, but he still won't.
+								flawless faces turn towards me. I Smile.
+								But I&#39;ve bitten of more than I can chew, so
+								I go for my gum. I'm out,
+								<br/>
+								<br/>
+								So, I smoke.
+								 </p>
+								 <p>
+								Light finds my face through a window.
+								I get out of the bed, and open a door.
+								I hold up my picture, to show a man sitting at his crowded desk.
+								Have you seen the person in my image?
+								He goes a bit stiff, so I offer my smokes.
+								I only had 2 left, could he share with the woman, gasping on her bed.
+								Their heads mechanically turn towards me.
+								She says, you know we don&#39;t..
+								<br/>
+								<br/>
+								So, I smoke.
+								 </p>
+								 <p>
+								In a bustling courtyard, I doubt my intuition, disturb my meditation.
+								I feel an increasing number of eyes on my back.
+								From the corner of my eye, people.
+								Their eyes wider than their mouths.
+								Above me, on the ground, a box of paint.
+								I wonder how that got there, how I arrived here.
+								I plant my other hand beside the box, covered in rainbow specks.
+								Hands ravenously scrambled into pockets, a sudden panic slowing their progress.
+								I rise to my feet.
+								As a camera flashes,
+								I become suddenly very uncomfortable.
+								<br/>
+								<br/>
+								So, I smoke.
+								</p>
+								 <p>
+								Dazed, I grab my backpack from near a broken glider.
+								I distance myself from the off scene, walking towards a big white house.
+								That felt..<br/>
+								I can&#39;t quite seem to..
+								Wait! I'm looking for that guy in my image!
+								That seems to comes back, and hasn't it before?
+								I can't quite grasp it.. That person!
+								I&#39;m planning them a surprise.
+								What surprise, again?<br/>
+								I guess I'll be surprised too, 
+								I can&#39;t quite remember..
+								<br/>
+								<br/>
+								Then I smoke.
+								</p>
+								 <p>
+								The skate park is locked. I knock.
+								The woman opens the window.
+								Get my ass in there before somebody calls the cops!
+								She takes me upstairs.
+								A face contorts in fear, looking at me, it's him.
+								The person in my image.
+								You do exist, he spits, I'm not crazy.
+								Process what is happening.
+								What exactly is happening?
+								He says, Everyone thinks I'm you!
+								Or You're me.. I didn't do it you did!!<br/>
+								I almost thought I was crazy! 
+								But who would've believed this??
+								But I'm not Crazy! Because you Do exist!
+								I think I see where he's going with this,
+								but can't quite convince even myself of existense.
+								As he believes in me, I become nauseous,
+								<br/>
+								<br/>
+								So, I smoke.
+								</p>
+								 <p>
+								I&#39;m on a train, and I feel content for the first time in.. Ages.
+								Somehow it slips away exactly who.
+								Who what? I am?<br/><br/>
+								
+								but I had mistaken who I was, or my identity..
+								An intense and slow surge in my gut, 
+								I'm at the start of something wild.
+								Suddenly came the thought, My cycle is nearing it&#39;s beginning.
+								Where did that come from? I come from..
+								Was I not just.. worried? About.. Something?
+								I take a big breath.<br/><br/>
+								I'll let this one play itself out.<br/>
+								I drift into the dreary country-scape, something in my pocket.
+								It's a picture... Of me? It breathes. I'm surprised.
+								I cover it up, but a pair of eyes finds mine from the front of my car.
+								She knows I saw her looking, and she licks her lips just a touch.
+								Making her way to my seat, swinging her hips ever so slightly, in an irresistable fashion.
+								She stops next to my row, looking expectantly.
+								I still make her work for it.
+								That seat&#39;s taken.
+								She studies me queitly for a moment, then laments, you don't smoke, do you?
+								I feel for a pack in my pocket, but when I look up, she's gone into thin air.
+								I want a smoke,
+								<br/>
+								<br/>
+								But I don't.
+								</p>
+
+
+						</div>
+
+
+
+
+
+
+				</div>
+
+
+				<div id="madness">
+
+							<img class="center-block img-responsive" title="Madness as a collage" alt="Madness as a collage" src="http://didntrealize.com/images/banner-collage-love.jpg"/>
+
+
+					
+							<div id="neverNaughtDiv" class="poem">
+
+
+								<h3 id="neverNotDiv">Nevernaut</h3>
+
+									<p class="poetryParagraph">
+											
+									
+									
+									Ever here, it's<br/>
+									Never not.<br/>
+									Life is ever<br/>
+									A never knot<br/>
+									</p>
+									
+									<p class="poetryParagraph">
+									Everything accounts for nothing,<br/>
+									Because Nothing does not.<br/>
+									<br/>
+
+									Nothing is boring<br/>
+									to those with an interest<br/>
+									In the interconnectedness<br/>
+									Of evanescent impediments.<br/>
+									Which may mean nothing to you,<br/>
+									As it does to me.<br/>
+									<br/>
+									
+									I am a contradiction,<br/>
+											You are a knot.<br/>
+											So are we,<br/>
+											Or are we not?
+									
+								</p>
+								
+							
+							
+					<img class="center-block img-responsive" title="Madness as a collage" alt="Madness as a collage" src="http://didntrealize.com/images/banner-collage-madness.jpg"/>
+
+
+							
+							<em>
+							
+								<p class="poetryParagraph">
+			
+			
+									"Nothing lasts,
+									But nothing is lost"<br/>
+									-William Blake<br/>
+
+									</p>
+									<p class="poetryParagraph">
+									"Everything is nothing,<br/>
+									
+									With a twist"<br/>
+									-Kurt Vonnegut<br/>
+									</p>
+							</em>
+
+
+					</div>
+				</div>
+				<div id="hideAndSeekDiv" style="background:white;">
+
+						<h3>Hide and seek</h3>
+	
+						<img align="left" class="sideImage" src="http://didntrealize.com/images/writingThumbhideandseek.jpg"/>
+	
+	
+	
+							<em><p class="poetryParagraph">
+	
+	
+								I forgot what I forgot,	<br/>
+								But at least remember that.<br/>
+								Hold on, I think I got it.<br/>
+								I'm looking for my hat.<br/>
+								I think I left it here,<br/>
+								But can't recall quite where.<br/>
+								I scratch my head, Eurekra!<br/>
+								The hat was on my hair.<br/>
+								<br/><br/>
+								I need to get this down,<br/>
+								Or forget again I fear.<br/>
+								So I check for a pencil,<br/>
+								Write behind my ear.<br/>
+								Instead I find some glasses,<br/>
+								Out of sight for years.<br/>
+								Now I see it clearly,<br/>
+								no wait, it disappeared.<br/>
+								I forget if I forget,<br/>
+								Was I already here?
+	
+							</p></em>
+		</div>
+
+		<div id="theNeedleDiv">
+
+		</div>
+
+		</div> <!-- end coreyPoems -->
+
+
+		<p style="text-align:center;" >&copy;2019 Corey Boiko</p>
+
+	</div>	<!-- end contentDiv -->
+</div>
+	
+	</body>
+	<script type="text/javascript">
+		var sideNavigation = document.getElementById("sidebar-list");
+		var rain = document.getElementById("rain"),
+				smoke = document.getElementById("smoke"),
+				madness = document.getElementById("madness");
+			
+		var selfByTrialDiv = document.getElementById("selfByTrialDiv");
+			
+		//redisplay content upon easter egg finds
+			function showSelfByTrial(){
+				selfByTrialDiv.style.display = "inherit";
+				document.getElementById('conditionalFriendlinessDiv').style.display = 'none';
+			}
+			
+			//hide revealable content
+			sideNavigation.style.display = "none";
+			// selfByTrialDiv.style.display = "none";
+			rain.style.display = "none";
+			//smoke.style.visibility = "hidden";
+			madness.style.display = "none";
+
+
+
+			//for those who are patient, show the next story
+			
+			let hasty = true,
+					patient = false;
+						
+						//all good things come to those that wait
+							setTimeout(function() {
+								hasty = false;
+								setTimeout(function() {
+									//entranceGate();
+									patient = true;
+									smoke.style.visibility = "initial";
+
+
+								}, 49000);
+							}, 10000);
+
+
+			
+
+
+	</script>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+		
+		<script type="text/javascript">
+				let theNeedle;
+
+				function retrieveHayStack(){
+					//console.log('before ajax');
+					$.ajax({ type: "GET",
+							url: "allowed.html",
+							success: function(data){ 
+								theNeedle = data;
+								document.getElementById('theNeedleDiv').innerHTML = theNeedle;
+								document.getElementById('theNeedleDiv').style.display = "none";
+							}
+							 
+					});
+					
+				}
+
+				retrieveHayStack();
+
+
+				function startDigging(){
+					console.log('start digging');
+					
+					$.getScript( "hayStack.js",
+						    function(data){
+									console.log(data);
+							});
+				}
+
+				$('#obscured').click(function(){
+					startDigging();
+				});
+				$('#obscured').css('text-decoration', 'none');
+		</script>
+</html>
