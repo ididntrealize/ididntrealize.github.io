@@ -104,7 +104,7 @@
 					
 						
 						</p>
-						<a id="foot" class="the-link" style="font-size:26px;padding:20px 0px;" href="#" onclick="crunch();//entranceGate();">Step on the Crunchies</a>
+						<a id="foot" class="the-link" style="font-size:26px;padding:20px 0px;" href="#" onclick="return crunch();//entranceGate();">Step on the Crunchies</a>
 						<!--href="http://didntrealize.com?comehereoften"-->
 						
 				</div>	
@@ -151,10 +151,10 @@
 				
 		
 		
-						var scirpt = "A pearl among straws",
-						script = "OK?",
-						hasty = true,
-						patient = false;
+						var haystack = "A pearl among straws";
+								haystack = "OK?";
+						var	hasty = true,
+								patient = false;
 						
 						//all good things come to those that wait
 							setTimeout(function() {
@@ -162,7 +162,7 @@
 								setTimeout(function() {
 									//entranceGate();
 									patient = true;
-								}, 180000);
+								}, 3*60*1000);
 							}, 10000);
 
 							
@@ -264,6 +264,9 @@
 										entranceGate();
 											
 										}
+
+
+										return false;
 							}
 
 							function entranceGate(){
