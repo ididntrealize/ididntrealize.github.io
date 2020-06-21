@@ -80,7 +80,8 @@ function initHayStack(){
 
     let theRealSlimBody = document.getElementById("heart-and-soul");
         theRealSlimBody.style.position = "absolute";
-        theRealSlimBody.style.bottom = "0";
+        theRealSlimBody.style.bottom = "0px";
+        theRealSlimBody.style.right = "0px";
         theRealSlimBody.style.minHeight = "100vh";
 
 
