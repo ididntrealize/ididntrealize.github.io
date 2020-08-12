@@ -138,15 +138,12 @@ function initHayStack(){
                 
                 
                 setInterval(function(){
-        
                     
                     $("a").css({'font-size':'-=1px'});
                     var a = Math.random() * 120 - 60;
                     $(needle).css('transform', 'rotate(' + a + 'deg) scale(1.25)');
 
                     //console.log('rotate needle');
-
-                
                 
                 }, 2300);
                 
@@ -154,12 +151,11 @@ function initHayStack(){
                 //console.log("dont move a muscle");
                 theOne.appendChild(butItCouldBe);
                 
-                
                 $("p").toggle().css("color", "black");
                 
                 function lookThroughStack(){
                     console.log("anything in here??");
-                            if(getRandomArbitrary(0,9) < 1){
+                            if(getRandomArbitrary(0,9) < 1) {
                                 console.log("THAT is a needle in a hay stack.");
                                 document.getElementById('hook').style.display = "none";
                             
