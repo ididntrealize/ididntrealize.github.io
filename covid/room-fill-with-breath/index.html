@@ -1,0 +1,389 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+
+    <title>How long it takes to fill any room with breath</title>
+
+    <style>
+        body{
+            position: relative;
+            font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+        }
+
+        h1,
+        h2,
+        h3,
+        h4 {
+            margin-bottom: 5px;
+            margin-top: 15px;
+        }
+
+        h1 {
+            font-size: 30px;
+        }
+        h2 {
+            font-size: 25px;
+        }
+
+        button {
+            margin: 5px;
+            background: white;
+            border-color: #90C2FF;
+            color: #90C2FF;
+            font-size: 15px;
+            padding: 7px 14px;
+        }
+
+        button:hover {
+            color: #90C2FF;
+            background-color: white;
+        }
+
+        button#calculate {
+            color: white;
+            background: #90C2FF;
+            border-color: #90C2FF;
+            font-size: 30px;
+        }
+
+        .container {
+            max-width: 768px;
+            margin: 0 auto;
+        }
+
+        .row {
+            margin-top: 30px;
+            padding: 0 15px;
+        }
+
+        .flex {
+            display: flex;
+        }
+
+        .timer {
+            margin: 10px 0;
+        }
+        .timer span {
+            font-weight: bold;
+            font-size: 34px;
+        }
+        .input-group .flex-row {
+            margin-top: 16px;
+        }
+
+        .input-group .flex-row input,
+        .input-group .flex-row label {
+            font-size: 18px;
+            margin: 2px;
+        }
+        
+        .input-group .flex-row label {
+            min-width: 160px;
+        }
+
+
+        #result-container {
+            overflow: hidden;
+            height: auto;
+
+            position: relative;
+            background-color: antiquewhite;
+            padding: 20px;
+        }
+
+        #result {
+            font-size: 40px;
+            color:cornflowerblue;
+        }
+
+        #math-expressions {
+            overflow: hidden;
+            height: auto;
+        }
+
+        .hidden {
+            height: 0;
+            display: none;
+        }
+    </style>
+
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+</head>
+
+<body>
+    <div class="container">
+
+        <div class="row">
+
+            <h1>
+                How long does it take to fill a room with your breath?
+            </h1>
+
+        </div>
+        <div id="result-container" class="row hidden">
+            <h2>It would take around </h2>
+            <span id="result">2h 34m 54s</span>
+
+            <h3>Want to <a id="reveal-math" href="#">check my maths</a>?</h3>
+
+            <div id="math-expressions" class="hidden">
+                <h3 style="text-align: center;">Volume of any given room</h3>
+                <p>
+                    
+                    $$ {
+                        Length(ft) * Width(ft) * Height(ft) = Volume(ft^3)
+                    } $$
+                </p>
+                <br/>
+                <h3 style="text-align: center;">Convert cubic feet to Liters</h3>
+                <p>
+                    $$ {
+                        Volume(ft^3) = 28.32 * Volume(L)
+                    } $$
+                </p>
+                <br/>
+                <h3 style="text-align: center;">Calculate Fill time with rate of fill and volume of room</h3>
+                <p>
+                    $$ {
+                        FillTime(s) = {Volume(L)) \over BreathSize(L) / BreathTime(s)}
+                    } $$
+                </p>
+
+
+            </div>
+
+        </div>
+
+        <div class="row">
+
+
+            <h2>
+                Estimate the room size
+            </h2>
+            <div class="input-group">
+                <div class="flex flex-row">
+                    <label for="room-height">
+                        Height (ft)
+                    </label>
+                    <input name="height" type="number" id="room-height" required/>
+
+                </div>
+                <div class="flex flex-row">
+                    <label for="room-width">
+                        Width (ft)
+                    </label>
+                    <input name="width" type="number" id="room-width" required/>
+
+                </div>
+                <div class="flex flex-row">
+                    <label for="room-length">
+                        Length (ft)
+                    </label>
+                    <input name="length" type="number" id="room-length" required/>
+                </div>
+
+            </div>
+
+
+        </div>
+        <div class="row">
+
+
+            <h2>
+                Estimate time to take a breath
+            </h2>
+            <div class="flex">
+                <button id="start-btn">Start</button>
+                <button id="stop-btn">Stop</button>
+                <button id="reset-btn">Reset</button>
+
+            </div>
+            <div class="flex timer">
+                <div><span id="hour">0</span>h&nbsp;</div>
+                <div><span id="minute">00</span>m&nbsp;</div>
+                <div><span id="seconds">00</span>s</div>
+
+            </div>
+            
+            <ul>
+                <li>Start timing when you start breathing in</li>
+                <li>Breath in AND out</li>
+                <li>Breath normally</li>
+                <li>Should be around 5 seconds</li>
+            </ul>
+
+            
+
+            <h2>
+                Size estimate of a breath (in Liters)
+            </h2>
+            <p>I've estimated that an average breath in 500mL (or .5L) based on this 
+                <a target="_blank" href="https://www.bbc.co.uk/bitesize/guides/z3xq6fr/revision/2#:~:text=Tidal%20volume%20(TV)%20is%20the,the%20lungs%20in%20a%20minute"> 
+                    article 
+                </a>. 
+                The article suggests average breath size is the same for most adult men and women.
+            </p>
+        </div>
+
+        <div class="row">
+
+            <button id="calculate">Calculate</button>
+        </div>
+    </div>
+
+    <script>
+        window.onload = () => {
+
+
+
+
+            let hour = 0;
+            let minute = 0;
+            let seconds = 0;
+            let totalSeconds = 0;
+
+            let intervalId = null;
+
+            function startTimer() {
+                ++totalSeconds;
+                hour = Math.floor(totalSeconds / 3600);
+                minute = Math.floor((totalSeconds - hour * 3600) / 60);
+                seconds = totalSeconds - (hour * 3600 + minute * 60);
+
+                if(minute < 10) minute = "0" + minute;
+                if(seconds < 10) seconds = "0" + seconds;
+
+                document.getElementById("hour").innerHTML = hour;
+                document.getElementById("minute").innerHTML = minute;
+                document.getElementById("seconds").innerHTML = seconds;
+            }
+
+            document.getElementById('start-btn').addEventListener('click', () => {
+                intervalId = setInterval(startTimer, 1000);
+            });
+
+            document.getElementById('stop-btn').addEventListener('click', () => {
+                if (intervalId)
+                    clearInterval(intervalId);
+            });
+
+
+            document.getElementById('reset-btn').addEventListener('click', () => {
+                totalSeconds = 0;
+                document.getElementById("hour").innerHTML = '0';
+                document.getElementById("minute").innerHTML = '00';
+                document.getElementById("seconds").innerHTML = '00';
+            });
+
+
+
+
+
+            function convertToHHMMSS(totalSeconds) {
+                var sec_num = parseInt(totalSeconds, 10); // don't forget the second param
+                var hours   = Math.floor(sec_num / 3600);
+                var minutes = Math.floor((sec_num - (hours * 3600)) / 60);
+                var seconds = sec_num - (hours * 3600) - (minutes * 60);
+
+                if (hours   < 10) {hours   = "0"+hours;}
+                if (minutes < 10) {minutes = "0"+minutes;}
+                if (seconds < 10) {seconds = "0"+seconds;}
+                return hours+'h &nbsp;'+minutes+'m&nbsp;'+seconds+'s';
+            }
+
+
+
+            document.getElementById('reveal-math').addEventListener('click', (e) => {
+                e.preventDefault();
+                document.getElementById('math-expressions').classList.remove('hidden');
+            });
+
+            let roomLengthElem = document.getElementById('room-length');
+            let roomHeightElem = document.getElementById('room-height');
+            let roomWidthElem  = document.getElementById('room-width');
+
+            let roomLength = 0;
+            let roomHeight = 0;
+            let roomWidth  = 0;
+
+            let breathSize = .5;
+            let cubicFootToLiterCoefficient = 28.32;
+
+            function useDefaultBreathSize () {
+                if (confirm('Looks like you did not time your breath. Want to just use 5 seconds?') ) {
+                    totalSeconds = 5;
+                    return true;
+                } else {
+                    return false;
+                };
+            }
+
+            function formValid() {
+                return roomLengthElem.value > 0
+                    && roomHeightElem.value > 0
+                    && roomWidthElem.value > 0
+                    //breath timer total seconds
+                    && (totalSeconds > 0 || useDefaultBreathSize() );
+                    
+            }
+            
+            function calculateTime(length, height, width, bTime, bSize) {
+                //cubic feet, then convert to Liter
+                let roomVolume = length * height * width;
+                    
+                    console.log('the room in cubic feet = ', roomVolume);
+
+                    roomVolume *= cubicFootToLiterCoefficient;
+
+                    console.log('the room in Litres = ', roomVolume);
+
+
+                    console.log('Breath Size (L) = ', bSize);
+                    console.log('Breath Time (S) = ', bTime);
+
+                //left with seconds
+                let fillTimeTotalSeconds = roomVolume / (bSize / bTime); 
+
+                console.log('the room volume in Litres / Breath Size * Time (Litres/Second) = ', fillTimeTotalSeconds);
+
+                return convertToHHMMSS(fillTimeTotalSeconds);
+            }
+
+            document.getElementById('calculate').addEventListener('click', (e) => {
+                e.preventDefault();
+
+                if (formValid()) {
+                    let calculatedTime = calculateTime(
+                            roomLengthElem.value, 
+                            roomHeightElem.value, 
+                            roomWidthElem.value, 
+                            //breath timer total seconds
+                            totalSeconds, 
+                            breathSize);
+
+                    //fill result
+                    document.getElementById('result').innerHTML = calculatedTime
+
+                    //Reveal results div
+                    document.getElementById('result-container').classList.remove('hidden');
+
+                    //Scroll to results div?
+                    window.scrollTo({top: 0, behavior: 'smooth'});
+
+                } else {
+                    alert ('looks like you forgot to enter in a value, or a value is impossibly below zero!')
+                }
+
+            });
+
+
+
+        }
+    </script>
+</body>
+
+</html>

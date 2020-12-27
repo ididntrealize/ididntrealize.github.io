@@ -31,7 +31,7 @@
 
         .jumbotron {
             background: rgb(23,163,184);
-            background: linear-gradient(180deg, rgba(23,163,184,0.24) 74%, rgba(23,163,184,0) 100%);
+            background: linear-gradient(180deg, rgba(105, 105, 105, 0.24) 74%, rgba(23,163,184,0) 100%);
         }
         .navbar {
             border-top: 1px solid #000;
@@ -55,7 +55,7 @@
         /* BODY */
 
         h2 {
-            font-family: cursive;
+            font-family: fantasy;
             font-size: 2.8rem;
             color: rgb(124, 113, 113);
         }
@@ -64,6 +64,11 @@
             font-size: 1.2rem;
             font-weight: 700;
         }
+
+        img {
+            max-width: 100%;
+        }
+
         .product h3 {
             font-size: 1.4rem;;
         }
@@ -72,7 +77,7 @@
             padding: 0px 40px;
         }
         .line-items {
-            margin-bottom: 45px;
+            margin-bottom: 65px;
         }
 
         .line-item {
@@ -105,6 +110,19 @@
             color: green;
         }
 
+        .stories article{
+            margin-bottom: 35px;
+        }
+        .stories .story-content {
+            display: flex;
+        }
+
+        .story-content .image,
+        .story-content .body {
+            flex: 1 0 50%;
+            padding: 10px;
+        }
+
     </style>
 
 </head>
@@ -125,11 +143,11 @@
         <b-container>
 
             <!-- MAIN HEADER AREA -->
-            <b-jumbotron g-variant="info" text-variant="white">
+            <b-jumbotron g-variant="dark" text-variant="white">
                 <h1>Thank you for caring</h1>
             
                 <div>
-                    <b-navbar toggleable="lg" type="dark" variant="info">
+                    <b-navbar toggleable="lg" type="dark" variant="dark">
                       <!-- <b-navbar-brand href="#">NavBar</b-navbar-brand> -->
                   
                       <b-navbar-toggle target="nav-collapse"></b-navbar-toggle>
@@ -182,11 +200,7 @@
                                 </b-nav-item>
                             </div>
                         </b-navbar-nav>
-                  
-                        <!-- Right aligned nav items -->
-                        <!-- <b-navbar-nav class="ml-auto">
-                  
-                        </b-navbar-nav> -->
+                
                       </b-collapse>
                     </b-navbar>
                   </div>
@@ -221,6 +235,30 @@
                     </div>
                 </div>
 
+                <h2>Where we shopped</h2>
+                <div class="stores line-items">
+                    <div class="line-item store"
+                        v-for="item of lineItems('store')">
+                        
+                        <div class="details">
+                            <div class="title">
+                                <h3>{{item.name}}</h3>
+                            </div>
+                            <div class="spent">
+                                <span>Total Spent: {{item.spent}}</span>
+                                <a :href='item.receiptUrl' target="_blank">
+                                    view receipt
+                                </a>
+                            </div>
+                            <!-- <div class="tags">
+                                <span class="tag" v-for="tag of item.tags">{{tag}}</span>
+                            </div> -->
+                        </div>
+
+                    </div>
+                </div>
+
+
                 <h2>Who recieved</h2>
                 <div class="recipients line-items">
                     <div class="line-item location"
@@ -238,21 +276,20 @@
                     </div>
                 </div>
 
-                <h2>Where we shopped</h2>
-                <div class="stores line-items">
-                    <div class="line-item store"
-                        v-for="item of lineItems('store')">
-                        
-                        <div class="details">
-                            <div class="title">
-                                <h3>{{item.name}}</h3>
+                <h2>How it went down</h2>
+                <div class="stories">
+                    <article v-for="story of article">
+                        <h3>{{story.name}}</h3>
+                        <div class="story-content">
+                            <div v-if='story.imageUrl !== ""' class="image">
+                                <img v-bind:src="story.imageUrl" />
                             </div>
-                            <div class="tags">
-                                <span class="tag" v-for="tag of item.tags">{{tag}}</span>
+                            <div class="body">
+                                {{story.body}}
                             </div>
                         </div>
+                    </article>
 
-                    </div>
                 </div>
             </div>
 
@@ -292,6 +329,14 @@
                         unitCost: "$4.00",
                         imageUrl: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRZWzhbQuXhLSm7UqNbMqUcoEF3e3e1EAuXW5g2q8oRH3vOsav5m92bcsETgAArNg7yRaZXedE&usqp=CAc",
                         storeName: "Walmart"
+                    },
+                    {
+                        type: "product",
+                        name: "$15 QFC Gift cards",
+                        quantity: "9 cards",
+                        unitCost: "$15.00",
+                        imageUrl: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSzSJY5zDQ3WZ0aGSKKFRWVl3wmp-PCsCFZ_g&usqp=CAU",
+                        storeName: "QFC"
                     },
                     {
                         type: "product",
@@ -342,14 +387,6 @@
                         storeName: "Fred Meyers"
                     },
                     {
-                        type: "product",
-                        name: "$15 QFC Gift cards",
-                        quantity: "9 cards",
-                        unitCost: "$15.00",
-                        imageUrl: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSzSJY5zDQ3WZ0aGSKKFRWVl3wmp-PCsCFZ_g&usqp=CAU",
-                        storeName: "Fred Meyers"
-                    },
-                    {
                         type: "location",
                         name: "Downtown encampments",
                         tags: ["Seattle"]
@@ -369,33 +406,48 @@
                         name: "Gasworks park",
                         tags: ["Seattle"]
                     },
-                    
                     {
                         type: "store",
                         name: "McLendon's",
-                        tags: ["featured"]
+                        tags: ["featured"],
+                        receiptUrl: "assets/mclendon-receipt-12-2020.jpg",
+                        spent: "$274.00"
                     },
                     {
                         type: "store",
                         name: "Fred Meyer's",
-                        tags: []
+                        tags: [],
+                        receiptUrl: "assets/fred-meyers-receipt-12-2020.jpg",
+                        spent: "$155.55"
                     },
                     {
                         type: "store",
                         name: "Walmart",
-                        tags: []
+                        tags: [],
+                        receiptUrl: "assets/walmart-receipt-12-2020.jpg",
+                        spent: "$145.77"
                     }
                 ],
                 article: [
-                    {
+                {
                         name: "McLendons matches over 2x",
                         author: {
                             first: "Corey",
                             last: "",
                             link: ""
                         },
-                        imageUrl: "",
+                        imageUrl: "assets/hats-and-gloves-christmas.jpg",
                         body: "I went to McLendon's with my Dad, and we found 25 pairs of sturdy leather gloves - to buy which totaled $470. Upon going to checkout, our cashier told us that she was going to discount the gloves to their bulk price (Knocking a single pair down from $12-15 to $3-4. Our Cashier explained that their company lets employees discount products for charitable causes. So of course i asked if i could go get more pairs - and doubled down! Neither the employee or the store ask for anything in return for the discount."
+                    },
+                    {
+                        name: "Something that someone said",
+                        author: {
+                            first: "Corey",
+                            last: "",
+                            link: ""
+                        },
+                        imageUrl: "",
+                        body: "I went to hand out gloves and hats in conjunction with an organization that brings vegan food out to homeless encampments (among other things). While I was out there, in a particularly underserved community, I met a man (probably in his thirties) who told me this time he was going to rehab and it was gonna work. I replied that if it didn't I wouldn't blame him (because he's fighting against losing odds - so it's not really a failure), and I said that he was getting a pair of gloves even if he wasn't actively trying to get clean at that moment. It makes me tear up a bit to think about - he looked me right in the eyes and told me how inspired he was by us. He said that I very well could have been the reason somebody didn't commit suicide that night. I wanted to share that with everyone."
                     }
                 ]
             },
