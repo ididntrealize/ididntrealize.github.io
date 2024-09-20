@@ -15,7 +15,7 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
     
     <script src="https://polyfill.io/v3/polyfill.min.js?features=es2015%2CIntersectionObserver"></script>
-    <script src="https://unpkg.com/vue@latest/dist/vue.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.7.16/dist/vue.js"></script>
     <script src="https://unpkg.com/bootstrap-vue@latest/dist/bootstrap-vue.js"></script>
     
     <style>
@@ -30,6 +30,7 @@
         }
 
         .jumbotron {
+            padding-top: 45px;
             background: rgb(23,163,184);
             background: linear-gradient(180deg, rgba(105, 105, 105, 0.24) 74%, rgba(23,163,184,0) 100%);
         }
@@ -45,6 +46,10 @@
             display: flex;
             justify-content: space-between;
             width: 100%;
+        }
+
+        .overview-stats .title{
+            color: #d6d6d6;
         }
 
         .stat-group .icon,
@@ -80,7 +85,7 @@
         }
 
         .spend-breakdown {
-            padding: 0px 40px;
+            padding: 20px 40px 0px 40px;
         }
         .line-items {
             margin-bottom: 65px;
@@ -208,7 +213,7 @@
                                         <i class="fa fa-star-o" aria-hidden="true"></i>
 
                                     </span>
-                                    <span class="title">
+                                    <span class="title" >
                                         Top Donation: 
                                     </span>
     
@@ -312,6 +317,10 @@
                 </div>
             </div>
 
+        </b-container>
+        <b-container>
+
+            <footer>&copy; Copyright 2020</footer>
         </b-container>
     </div>
 
